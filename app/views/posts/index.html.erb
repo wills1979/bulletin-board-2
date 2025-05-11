@@ -51,6 +51,7 @@
         Create post
       </button>
     </form>
+    <p>You must <a href="/users/sign_in">sign in</a> to add a board.</p>
   </div>
 </div>
 
@@ -92,40 +93,40 @@
       </tr>
 
       <% @list_of_posts.each do |a_post| %>
-      <tr>
-        <td>
-          <%= a_post.id %>
-        </td>
+        <tr>
+          <td>
+            <%= a_post.id %>
+          </td>
 
-        <td>
-          <%= a_post.title %>
-        </td>
+          <td>
+            <%= a_post.title %>
+          </td>
 
-        <td>
-          <%= a_post.body %>
-        </td>
+          <td>
+            <%= a_post.body %>
+          </td>
 
-        <td>
-          <%= a_post.expires_on %>
-        </td>
+          <td>
+            <%= a_post.expires_on %>
+          </td>
 
-        <td>
-          <%= a_post.board_id %>
-        </td>
+          <td>
+            <%= a_post.board_id %>
+          </td>
 
-        <td>
-          <%= time_ago_in_words(a_post.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_post.updated_at) %> ago
-        </td>
+          <td>
+            <%= time_ago_in_words(a_post.created_at) %> ago
+          </td>
+          <td>
+            <%= time_ago_in_words(a_post.updated_at) %> ago
+          </td>
 
-        <td>
-          <a href="/posts/<%= a_post.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
+          <td>
+            <a href="/posts/<%= a_post.id %>">
+              Show details
+            </a>
+          </td>
+        </tr>
       <% end %>
     </table>
   </div>
